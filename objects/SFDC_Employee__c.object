@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Additional_Education__c</fullName>
+        <label>Additional Education</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BU_Description__c</fullName>
+        <label>BU Description</label>
+        <length>70</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Bonus_Potential__c</fullName>
+        <formula>Salary__c  *  0.05</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bonus (Potential)</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Business_Unit__c</fullName>
+        <label>Business Unit</label>
+        <length>60</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Call_Center__c</fullName>
+        <label>Call Center #</label>
+        <precision>6</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Corp_Photo__c</fullName>
+        <formula>IMAGE(&quot;http://www.salesforceius.com/appx/staffpix/&quot;&amp;  JPG__c , Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Corp Photo</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>DOB__c</fullName>
+        <label>DOB</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_Employed__c</fullName>
+        <formula>TODAY () - Hire_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Employed</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Dental_Benefits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Dental Benefits</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Desk_Terminal__c</fullName>
+        <label>Desk Terminal</label>
+        <length>5</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EMERGENCY_CONTACT__c</fullName>
+        <label>EMERGENCY CONTACT</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EMP_ID__c</fullName>
+        <label>EMP ID</label>
+        <precision>15</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <label>Degrees</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MBA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PhD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <label>Email Address</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Phone__c</fullName>
+        <label>Emergency Contact Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact_Relationship__c</fullName>
+        <label>Emergency Contact Relationship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Significant Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Fax__c</fullName>
+        <label>Employee Fax</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Employee_ID__c</fullName>
+        <description>Emp ID for charting</description>
+        <displayFormat>{0000000}</displayFormat>
+        <label>Employee ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Status__c</fullName>
+        <label>Employee Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LOA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Type__c</fullName>
+        <label>Employee Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Full Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ethnicity__c</fullName>
+        <label>Ethnicity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Caucasion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Afican-American</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Field_Location__c</fullName>
+        <label>Field Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>San Francisco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chicago</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Los Angeles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Former_Employer_1__c</fullName>
+        <label>Former Employer 1</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Former_Employer_3__c</fullName>
+        <label>Former Employer 3</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Former_Employer__c</fullName>
+        <label>Former Employer 2</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <label>Gender</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <label>Group #</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Gym_Member__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Gym Member</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hire_Date__c</fullName>
+        <label>Hire Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Home_Address__c</fullName>
+        <label>Home Address</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Home_Email__c</fullName>
+        <label>Home Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>IsAssistant__c</fullName>
+        <label>IsAssistant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>JPG__c</fullName>
+        <label>JPG</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Function__c</fullName>
+        <label>Job Function</label>
+        <referenceTo>SFDC_Job_Function__c</referenceTo>
+        <relationshipLabel>Employees</relationshipLabel>
+        <relationshipName>R00N30000001eUPQEA2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Review_Date__c</fullName>
+        <label>Last Review Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <label>Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Headquarters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mail_Drop__c</fullName>
+        <label>Mail Drop</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Marital_Status__c</fullName>
+        <label>Marital Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Married</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Med_Type__c</fullName>
+        <label>Med Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PPO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HMO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Benefits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Medical Benefits</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Org_Unit__c</fullName>
+        <label>Org Unit</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <label>Phone Number</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Position_Date__c</fullName>
+        <label>Position Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Position_ID__c</fullName>
+        <label>Position ID</label>
+        <precision>6</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>SF_User__c</fullName>
+        <label>SF User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N30000001eUPVEA2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Salary__c</fullName>
+        <label>Salary</label>
+        <precision>9</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Section_Sup__c</fullName>
+        <label>Section Sup</label>
+        <precision>5</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Security_ID__c</fullName>
+        <label>Security ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Special_Skills__c</fullName>
+        <label>Special Skills</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Options__c</fullName>
+        <label>Stock Options</label>
+        <precision>7</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Value_Day_1__c</fullName>
+        <label>Stock Value (Day 1)</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Emp_ID__c</fullName>
+        <label>Supervisor Emp ID</label>
+        <precision>15</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Name_Full__c</fullName>
+        <label>Supervisor Name (Full)</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Termination_Date__c</fullName>
+        <label>Termination Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <label>Title</label>
+        <length>70</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Total_Stock_Value__c</fullName>
+        <formula>Stock_Value_Day_1__c   *   Stock_Options__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Stock Value</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit__c</fullName>
+        <label>Unit</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_ID__c</fullName>
+        <label>User ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Vacation_Days__c</fullName>
+        <label>Vacation Days</label>
+        <precision>4</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>X401K__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>401K</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Yahoo_IM__c</fullName>
+        <label>Yahoo IM</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Yearly_Comp__c</fullName>
+        <formula>Salary__c  +  Bonus_Potential__c  +  Total_Stock_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Yearly Comp</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <label>Employee</label>
+    <language>en_US</language>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Employee_Status__c</columns>
+        <columns>Employee_Type__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Contractors</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Status__c</columns>
+        <columns>Hire_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Employee_Type__c</field>
+            <operation>equals</operation>
+            <value>Contract</value>
+        </filters>
+        <label>Contractors</label>
+    </listViews>
+    <listViews>
+        <fullName>FullTimeEmployees</fullName>
+        <columns>NAME</columns>
+        <columns>Employee_Type__c</columns>
+        <columns>Title__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Employee_Type__c</field>
+            <operation>equals</operation>
+            <value>Full Time</value>
+        </filters>
+        <label>Full Time Employees</label>
+    </listViews>
+    <nameField>
+        <label>Employee Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employees</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Employee_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Hire_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Corp_Photo__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Employee_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Corp_Photo__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

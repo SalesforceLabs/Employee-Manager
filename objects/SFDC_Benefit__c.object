@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Benefit_Plan__c</fullName>
+        <label>Benefit Plan</label>
+        <picklist>
+            <controllingField>Benefit_Type__c</controllingField>
+            <picklistValues>
+                <fullName>PPO</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HMO</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Savings</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medicaid</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medicare</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHiP</fullName>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <controllingFieldValues>Vision Insurance</controllingFieldValues>
+                <controllingFieldValues>401k</controllingFieldValues>
+                <controllingFieldValues>Dental Insurance</controllingFieldValues>
+                <controllingFieldValues>Life Insurance</controllingFieldValues>
+                <controllingFieldValues>Health Insurance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Benefit_Type__c</fullName>
+        <label>Benefit Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Health Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dental Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vision Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Life Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>401k</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Employee__c</fullName>
+        <label>Employee</label>
+        <referenceTo>SFDC_Employee__c</referenceTo>
+        <relationshipLabel>Benefits</relationshipLabel>
+        <relationshipName>R00N30000001eUPLEA2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Months_for_Plan__c</fullName>
+        <label># Months for Plan</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Plan_End_Date__c</fullName>
+        <formula>Plan_Start_Date__c  + Months_for_Plan__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Plan End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Start_Date__c</fullName>
+        <label>Plan Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <label>Request Date</label>
+        <type>Date</type>
+    </fields>
+    <label>Benefit</label>
+    <language>en_US</language>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Employee__c</columns>
+        <columns>Benefit_Type__c</columns>
+        <columns>Benefit_Plan__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>AllDentalHealthPlans</fullName>
+        <columns>Employee__c</columns>
+        <columns>NAME</columns>
+        <columns>Benefit_Plan__c</columns>
+        <columns>Request_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Benefit_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental Insurance</value>
+        </filters>
+        <label>All Dental Health Plans</label>
+    </listViews>
+    <listViews>
+        <fullName>AllHealthInsuranceBenefits</fullName>
+        <columns>Employee__c</columns>
+        <columns>Benefit_Plan__c</columns>
+        <columns>Plan_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Benefit_Type__c</field>
+            <operation>equals</operation>
+            <value>Health Insurance</value>
+        </filters>
+        <label>All Health Insurance Benefits</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BENEFIT-{00000}</displayFormat>
+        <label>Benefit Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Benefits</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Employee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Benefit_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Request_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Employee__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Benefit_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Request_Date__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Employee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Benefit_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
